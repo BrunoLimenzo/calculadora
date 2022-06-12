@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>Calculadora</title>
 </head>
@@ -14,69 +15,27 @@
         <div id="calculadora">
             <p id="resultado"></p>
 
-            <table>
-                <tr>
-                    <td><button class="botao" onclick="addValue('+')">+</button></td>
-                    <td><button class="botao" onclick="addValue('-')">-</button></td>
-                    <td><button class="botao" onclick="addValue('*')">x</button></td>
-                    <td><button class="botao" onclick="addValue('/')">/</button></td>
-                </tr>
+            <ul>
+                    <li>+</li>
+                    <li>-</li>
+                    <li>x</li>
+                    <li>/</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li id="botao-igual">=</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>0</li>
+                    <li id="botao-limpar">C</li>
+                    <li>.</li>
+            </ul>
 
-                <tr>
-                    <td><button class="botao" onclick="addValue('1')">1</button></td>
-                    <td><button class="botao" onclick="addValue('2')">2</button></td>
-                    <td><button class="botao" onclick="addValue('3')">3</button></td>
-                    <td rowspan="4"><button onclick="writeResult()" class="botao" id="botao-igual">=</button></td>
-                </tr>
-
-                <tr>
-                    <td><button class="botao" onclick="addValue('4')">4</button></td>
-                    <td><button class="botao" onclick="addValue('5')">5</button></td>
-                    <td><button class="botao" onclick="addValue('6')">6</button></td>
-                </tr>
-
-                <tr>
-                    <td><button class="botao" onclick="addValue('7')">7</button></td>
-                    <td><button class="botao" onclick="addValue('8')">8</button></td>
-                    <td><button class="botao" onclick="addValue('9')">9</button></td>
-                </tr>
-
-                <tr>
-                    <td><button class="botao" onclick="addValue('0')">0</button></td>
-                    <td><button class="botao" onclick="clearResult()">C</button></td>
-                    <td><button class="botao" onclick="addValue('.')">.</button></td>
-                </tr>
-            </table>
-
-            <script>
-                function addValue(value){
-                    const actualValue = document.getElementById("resultado").innerHTML;
-                    document.getElementById("resultado").innerHTML = actualValue + value;
-                }
-
-                function clearResult(){
-                    document.getElementById("resultado").innerHTML = "";
-                }
-
-                function writeResult(){
-                    const val = document.getElementById("resultado").innerHTML;
-                    if(val && canEval(val)){
-                        document.getElementById("resultado").innerHTML = eval(val);
-                    }else{
-                        document.getElementById("resultado").innerHTML = "ERROR";
-                    }
-                }
-
-                function canEval(val){
-                    try {
-                        eval(val);
-                    } catch (error) {
-                        return false
-                    }
-
-                    return true;
-                }
-            </script>
+            <script src="app.js"></script>
         </div>
     </div>
 </body>
