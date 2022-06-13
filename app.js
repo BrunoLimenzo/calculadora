@@ -3,11 +3,10 @@ $(document).ready(function(){
    for(let li of items){
     if(li.id === ""){
     li.addEventListener("click",function(){addValue(li.innerHTML)});
-    }else if(li.id === "botao-igual"){
-        li.addEventListener("click", writeResult);
-    }else if(li.id=== "botao-limpar"){
-        li.addEventListener("click", clearResult);
     }
+
+    $("#botao-igual").click(writeResult);
+    $("#botao-limpar").click(clearResult);
    }
 })
 
